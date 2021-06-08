@@ -144,6 +144,7 @@ export default {
 }
 
 .breed-info__container {
+  padding: 10px;
   margin-top: 10px;
   max-width: 600px;
   overflow: hidden;
@@ -164,15 +165,26 @@ export default {
   flex-wrap: nowrap;
   -ms-flex-line-pack: center;
   align-content: center;
+  @media (max-width: 500px) {
+    max-width: 300px;
+  }
 }
 
 .flag {
-  width: 40px;
-  border-radius: 10px;
-  margin-top: 10px;
+  width: 45px;
+  border-radius: 15px;
 }
 
-.country,
+.country {
+  font-family: "Exo 2", sans-serif;
+  padding: 10px;
+  font-size: 18px;
+  line-height: 1.5;
+  border-radius: 15px;
+  background: white;
+  margin-left: 10px;
+}
+
 .description,
 .temperament {
   font-family: "Exo 2", sans-serif;

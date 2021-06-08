@@ -7,8 +7,10 @@
       </option>
     </select>
     <div class="breed-info__container">
-      <img class="flag" :src="country_flag_url" alt="" />
-      <div class="country" v-if="showItem()">{{ country_name }}</div>
+      <div class="flag-country__container">
+        <img class="flag" :src="country_flag_url" alt="" />
+        <div class="country" v-if="showItem()">{{ country_name }}</div>
+      </div>
       <div class="temperament" v-if="showItem()">{{ temperament }}</div>
       <img class="image" :src="image" alt="" />
       <p class="description" v-if="showItem()">{{ description }}</p>
@@ -95,6 +97,11 @@ export default {
   align-items: center;
 }
 
+.flag-country__container {
+  display: flex;
+  align-items: center;
+}
+
 .label {
   font-size: 50px;
   font-weight: 700;
@@ -125,6 +132,7 @@ export default {
 }
 
 .breed-info__container {
+  padding: 10px;
   margin-top: 10px;
   max-width: 600px;
   overflow: hidden;
@@ -145,15 +153,26 @@ export default {
   flex-wrap: nowrap;
   -ms-flex-line-pack: center;
   align-content: center;
+  @media (max-width: 500px) {
+    max-width: 300px;
+  }
 }
 
 .flag {
-  width: 40px;
-  border-radius: 10px;
-  margin-top: 10px;
+  width: 45px;
+  border-radius: 15px;
 }
 
-.country,
+.country {
+  font-family: "Exo 2", sans-serif;
+  padding: 10px;
+  font-size: 18px;
+  line-height: 1.5;
+  border-radius: 15px;
+  background: white;
+  margin-left: 10px;
+}
+
 .description,
 .temperament {
   font-family: "Exo 2", sans-serif;

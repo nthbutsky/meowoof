@@ -50,6 +50,9 @@ export default {
   align-content: center;
   flex-direction: column;
   flex-wrap: nowrap;
+  @media (max-width: 400px) {
+    display: block;
+  }
 }
 body {
   background: #f0f0f0;
@@ -91,19 +94,19 @@ body {
 }
 
 .nav-btn-pet {
-  width: 300px;
+  width: 200px;
   margin: 10px;
   border-radius: 50%;
   @media (max-width: 400px) {
-    width: 200px;
+    width: 100px;
   }
 
   &:hover {
     border-radius: 0;
-    width: 305px;
+    width: 205px;
     margin: 7.5px;
     @media (max-width: 400px) {
-      width: 205px;
+      width: 105px;
     }
   }
 }
