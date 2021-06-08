@@ -7,12 +7,16 @@
       </option>
     </select>
     <div class="breed-info__container">
-      <div class="flag-country__container">
-        <img class="flag" :src="country_flag_url" alt="" />
-        <div class="country" v-if="showItem()">{{ country_name }}</div>
+      <div class="temperament" v-if="showItem()">
+        {{ temperament }}
+        <div class="country" v-if="showItem()">
+          Country of origin: {{ country_name }}
+        </div>
       </div>
-      <div class="temperament" v-if="showItem()">{{ temperament }}</div>
-      <img class="image" :src="image" alt="" />
+      <div class="image__container">
+        <img class="image" :src="image" alt="" />
+        <img class="flag" :src="country_flag_url" alt="" />
+      </div>
       <p class="description" v-if="showItem()">{{ description }}</p>
       <a class="wiki-link" :href="wiki_url" v-if="showItem()">WIKIPEDIA</a>
     </div>
@@ -97,23 +101,18 @@ export default {
   align-items: center;
 }
 
-.flag-country__container {
-  display: flex;
-  align-items: center;
-}
-
 .label {
-  font-size: 50px;
+  font-size: 3rem;
   font-weight: 700;
   color: #888;
-  margin: 20px 0;
+  margin: 5px 0;
 }
 
 .cat-breeds {
   font-family: "Exo 2", sans-serif;
   font-size: 18px;
   border: solid 1px #aaa;
-  padding: 10px;
+  padding: 5px;
   border-radius: 10px;
   list-style: none;
   &:focus {
@@ -132,8 +131,8 @@ export default {
 }
 
 .breed-info__container {
+  position: relative;
   padding: 10px;
-  margin-top: 10px;
   max-width: 600px;
   overflow: hidden;
   display: -webkit-box;
@@ -155,34 +154,35 @@ export default {
   align-content: center;
 }
 
-.flag {
-  width: 45px;
-  border-radius: 15px;
+.image__container {
+  position: relative;
 }
 
-.country {
-  font-family: "Exo 2", sans-serif;
-  padding: 10px;
-  font-size: 18px;
-  line-height: 1.5;
+.flag {
+  margin-top: 10px;
+  margin-left: 5px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50px;
   border-radius: 15px;
-  background: white;
-  margin-left: 10px;
+  opacity: 75%;
 }
 
 .description,
 .temperament {
   font-family: "Exo 2", sans-serif;
-  padding: 10px;
+  padding: 5px;
   font-size: 18px;
   line-height: 1.5;
   border-radius: 15px;
   background: white;
-  margin-top: 10px;
-}
-
-.temperament {
-  width: 100%;
+  &.description {
+    margin-top: 5px;
+  }
+  &.temperament {
+    width: 100%;
+  }
 }
 
 .wiki-link {
@@ -197,7 +197,7 @@ export default {
 }
 
 .image {
-  margin-top: 10px;
+  margin-top: 5px;
   width: 100%;
   border-radius: 20px;
 }

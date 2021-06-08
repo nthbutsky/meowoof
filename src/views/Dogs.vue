@@ -20,11 +20,8 @@ export default {
 
 <style scoped lang="less">
 .nav-btn-home {
-  width: 100px;
-  height: 100px;
-  @media (max-width: 400px) {
-    width: 50px;
-    height: 50px;
-  }
+  margin: 10px;
+  width: 50px;
+  height: 50px;
 }
 </style>
