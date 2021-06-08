@@ -165,9 +165,6 @@ export default {
   flex-wrap: nowrap;
   -ms-flex-line-pack: center;
   align-content: center;
-  @media (max-width: 500px) {
-    max-width: 300px;
-  }
 }
 
 .flag {

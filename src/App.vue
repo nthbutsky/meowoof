@@ -1,15 +1,17 @@
 <template>
   <div id="nav" v-if="showNav()">
-    <div class="nav-text">
-      <p>Choose your folk!</p>
-    </div>
-    <div class="nav__container">
-      <router-link to="/cats">
-        <img class="nav-btn-pet" src="@/assets/050-cat.svg" alt="Cat Icon" />
-      </router-link>
-      <router-link class="nav-btn-dog" to="/dogs">
-        <img class="nav-btn-pet" src="@/assets/039-dog.svg" alt="Dog Icon" />
-      </router-link>
+    <div class="nav-text__container">
+      <div class="nav-text">
+        <p>Choose your folk!</p>
+      </div>
+      <div class="nav__container">
+        <router-link to="/cats">
+          <img class="nav-btn-pet" src="@/assets/050-cat.svg" alt="Cat Icon" />
+        </router-link>
+        <router-link class="nav-btn-dog" to="/dogs">
+          <img class="nav-btn-pet" src="@/assets/039-dog.svg" alt="Dog Icon" />
+        </router-link>
+      </div>
     </div>
   </div>
   <router-view />
@@ -42,17 +44,8 @@ export default {
   font-style: normal;
   font-size: 100%;
   text-align: center;
-  padding-top: 1.875rem;
+  padding-top: 50px;
   height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  @media (max-width: 400px) {
-    display: block;
-  }
 }
 body {
   background: #f0f0f0;
@@ -74,6 +67,19 @@ body {
       }
     }
   }
+}
+
+.nav-text__container {
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  // @media (max-width: 400px) {
+  //   display: block;
+  // }
 }
 
 .nav__container {
